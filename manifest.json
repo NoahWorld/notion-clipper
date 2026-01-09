@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "DevClip for Notion",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Developer-focused web clipper for Notion. Save articles, code snippets, and technical resources instantly.",
   "action": {
     "default_title": "Save to Notion",
