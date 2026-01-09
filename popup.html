@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevClip for Notion</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <h1>DevClip</h1>
+      <button id="settingsBtn" class="icon-btn" title="Settings">⚙️</button>
+    </div>
+
+    <!-- Main View -->
+    <div id="mainView" class="view active">
+      <div id="pageInfo" class="page-info">
+        <div class="page-title" id="pageTitle">Loading...</div>
+        <div class="page-url" id="pageUrl"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="notionDatabase">Database</label>
+        <select id="notionDatabase" class="input">
+          <option value="">Select database...</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="tags">Tags (optional)</label>
+        <input type="text" id="tags" class="input" placeholder="javascript, tutorial, react">
+      </div>
+
+      <div class="form-group">
+        <label for="notes">Notes (optional)</label>
+        <textarea id="notes" class="input textarea" placeholder="Add your notes here..."></textarea>
+      </div>
+
+      <button id="saveBtn" class="btn btn-primary">
+        <span id="saveBtnText">Save to Notion</span>
+      </button>
+
+      <div id="status" class="status"></div>
+    </div>
+
+    <!-- Settings View -->
+    <div id="settingsView" class="view">
+      <div class="settings-header">
+        <button id="backBtn" class="icon-btn">←</button>
+        <h2>Settings</h2>
+      </div>
+
+      <div class="form-group">
+        <label for="apiToken">Notion API Token</label>
+        <input type="password" id="apiToken" class="input" placeholder="secret_...">
+        <small class="help-text">
+          Get your token from <a href="https://www.notion.so/my-integrations" target="_blank">Notion Integrations</a>
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label for="databaseId">Database ID</label>
+        <input type="text" id="databaseId" class="input" placeholder="abc123...">
+        <small class="help-text">
+          Copy from your Notion database URL
+        </small>
+      </div>
+
+      <button id="saveSettingsBtn" class="btn btn-primary">Save Settings</button>
+      <button id="testConnectionBtn" class="btn btn-secondary">Test Connection</button>
+
+      <div id="settingsStatus" class="status"></div>
+
+      <div class="help-section">
+        <h3>Quick Setup Guide</h3>
+        <ol>
+          <li>Go to <a href="https://www.notion.so/my-integrations" target="_blank">Notion Integrations</a></li>
+          <li>Create a new integration and copy the token</li>
+          <li>Open your Notion database and click "..." → "Add connections"</li>
+          <li>Select your integration</li>
+          <li>Copy the database ID from the URL</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
