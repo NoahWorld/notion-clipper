@@ -10,36 +10,49 @@
   <div class="container">
     <!-- Header -->
     <div class="header">
-      <h1>DevClip</h1>
-      <button id="settingsBtn" class="icon-btn" title="Settings">⚙️</button>
+      <div class="header-left">
+        <div class="logo">📎</div>
+        <h1 data-i18n="appName">DevClip</h1>
+      </div>
+      <div class="header-right">
+        <select id="langSelect" class="lang-select">
+          <option value="en">English</option>
+          <option value="zh-CN">简体中文</option>
+          <option value="zh-TW">繁體中文</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="es">Español</option>
+          <option value="pt">Português</option>
+          <option value="hi">हिन्दी</option>
+          <option value="ar">العربية</option>
+        </select>
+        <button id="settingsBtn" class="icon-btn" data-i18n-title="settings">⚙️</button>
+      </div>
     </div>
 
     <!-- Main View -->
     <div id="mainView" class="view active">
       <div id="pageInfo" class="page-info">
-        <div class="page-title" id="pageTitle">Loading...</div>
-        <div class="page-url" id="pageUrl"></div>
+        <div class="page-icon">🌐</div>
+        <div class="page-details">
+          <div class="page-title" id="pageTitle">Loading...</div>
+          <div class="page-url" id="pageUrl"></div>
+        </div>
       </div>
 
       <div class="form-group">
-        <label for="notionDatabase">Database</label>
-        <select id="notionDatabase" class="input">
-          <option value="">Select database...</option>
-        </select>
+        <label for="tags" data-i18n="tagsLabel">Tags</label>
+        <input type="text" id="tags" class="input" data-i18n-placeholder="tagsPlaceholder">
       </div>
 
       <div class="form-group">
-        <label for="tags">Tags (optional)</label>
-        <input type="text" id="tags" class="input" placeholder="javascript, tutorial, react">
-      </div>
-
-      <div class="form-group">
-        <label for="notes">Notes (optional)</label>
-        <textarea id="notes" class="input textarea" placeholder="Add your notes here..."></textarea>
+        <label for="notes" data-i18n="notesLabel">Notes</label>
+        <textarea id="notes" class="input textarea" data-i18n-placeholder="notesPlaceholder"></textarea>
       </div>
 
       <button id="saveBtn" class="btn btn-primary">
-        <span id="saveBtnText">Save to Notion</span>
+        <span class="btn-icon">💾</span>
+        <span id="saveBtnText" data-i18n="saveBtn">Save to Notion</span>
       </button>
 
       <div id="status" class="status"></div>
@@ -49,39 +62,51 @@
     <div id="settingsView" class="view">
       <div class="settings-header">
         <button id="backBtn" class="icon-btn">←</button>
-        <h2>Settings</h2>
+        <h2 data-i18n="settingsTitle">Settings</h2>
       </div>
 
-      <div class="form-group">
-        <label for="apiToken">Notion API Token</label>
-        <input type="password" id="apiToken" class="input" placeholder="secret_...">
-        <small class="help-text">
-          Get your token from <a href="https://www.notion.so/my-integrations" target="_blank">Notion Integrations</a>
-        </small>
-      </div>
+      <div class="settings-content">
+        <div class="form-group">
+          <label for="apiToken" data-i18n="apiTokenLabel">Notion API Token</label>
+          <input type="password" id="apiToken" class="input" placeholder="secret_...">
+          <small class="help-text">
+            <span data-i18n="getTokenFrom">Get your token from</span>
+            <a href="https://www.notion.so/my-integrations" target="_blank">Notion Integrations</a>
+          </small>
+        </div>
 
-      <div class="form-group">
-        <label for="databaseId">Database ID</label>
-        <input type="text" id="databaseId" class="input" placeholder="abc123...">
-        <small class="help-text">
-          Copy from your Notion database URL
-        </small>
-      </div>
+        <div class="form-group">
+          <label for="databaseId" data-i18n="databaseIdLabel">Database ID</label>
+          <input type="text" id="databaseId" class="input" placeholder="abc123...">
+          <small class="help-text" data-i18n="databaseIdHelp">Copy from your Notion database URL</small>
+        </div>
 
-      <button id="saveSettingsBtn" class="btn btn-primary">Save Settings</button>
-      <button id="testConnectionBtn" class="btn btn-secondary">Test Connection</button>
+        <div class="button-group">
+          <button id="saveSettingsBtn" class="btn btn-primary">
+            <span class="btn-icon">✓</span>
+            <span data-i18n="saveSettingsBtn">Save Settings</span>
+          </button>
+          <button id="testConnectionBtn" class="btn btn-secondary">
+            <span class="btn-icon">🔌</span>
+            <span data-i18n="testConnectionBtn">Test Connection</span>
+          </button>
+        </div>
 
-      <div id="settingsStatus" class="status"></div>
+        <div id="settingsStatus" class="status"></div>
 
-      <div class="help-section">
-        <h3>Quick Setup Guide</h3>
-        <ol>
-          <li>Go to <a href="https://www.notion.so/my-integrations" target="_blank">Notion Integrations</a></li>
-          <li>Create a new integration and copy the token</li>
-          <li>Open your Notion database and click "..." → "Add connections"</li>
-          <li>Select your integration</li>
-          <li>Copy the database ID from the URL</li>
-        </ol>
+        <div class="help-section">
+          <div class="help-header">
+            <span class="help-icon">💡</span>
+            <h3 data-i18n="quickSetupGuide">Quick Setup Guide</h3>
+          </div>
+          <ol>
+            <li data-i18n="setupStep1">Go to Notion Integrations</li>
+            <li data-i18n="setupStep2">Create a new integration and copy the token</li>
+            <li data-i18n="setupStep3">Open your Notion database and click "..." → "Add connections"</li>
+            <li data-i18n="setupStep4">Select your integration</li>
+            <li data-i18n="setupStep5">Copy the database ID from the URL</li>
+          </ol>
+        </div>
       </div>
     </div>
   </div>
