@@ -41,7 +41,9 @@ const translations = {
     connectionFailed: 'Connection failed',
     settingsSaved: 'Settings saved successfully!',
     fillAllFields: 'Please fill in all fields',
-    configureFirst: 'Please configure your Notion API settings first'
+    configureFirst: 'Please configure your Notion API settings first',
+    privacyTitle: 'Your Privacy is Protected',
+    privacyMessage: 'Your API token is stored locally on your device only. We never collect, transmit, or access your credentials.'
   },
   'zh-CN': {
     appName: 'DevClip',
@@ -72,7 +74,9 @@ const translations = {
     connectionFailed: '连接失败',
     settingsSaved: '设置保存成功！',
     fillAllFields: '请填写所有字段',
-    configureFirst: '请先配置 Notion API 设置'
+    configureFirst: '请先配置 Notion API 设置',
+    privacyTitle: '您的隐私受到保护',
+    privacyMessage: '您的 API 令牌仅存储在您的设备本地。我们绝不会收集、传输或访问您的凭据。'
   },
   'zh-TW': {
     appName: 'DevClip',
@@ -103,7 +107,9 @@ const translations = {
     connectionFailed: '連線失敗',
     settingsSaved: '設定儲存成功！',
     fillAllFields: '請填寫所有欄位',
-    configureFirst: '請先設定 Notion API 設定'
+    configureFirst: '請先設定 Notion API 設定',
+    privacyTitle: '您的隱私受到保護',
+    privacyMessage: '您的 API 令牌僅儲存在您的裝置本機。我們絕不會收集、傳輸或存取您的憑證。'
   },
   ja: {
     appName: 'DevClip',
@@ -134,7 +140,9 @@ const translations = {
     connectionFailed: '接続に失敗しました',
     settingsSaved: '設定を保存しました！',
     fillAllFields: 'すべてのフィールドを入力してください',
-    configureFirst: '最初に Notion API 設定を構成してください'
+    configureFirst: '最初に Notion API 設定を構成してください',
+    privacyTitle: 'プライバシーは保護されています',
+    privacyMessage: 'API トークンはお使いのデバイスにのみローカルに保存されます。当社はお客様の認証情報を収集、送信、またはアクセスすることはありません。'
   },
   ko: {
     appName: 'DevClip',
@@ -165,7 +173,9 @@ const translations = {
     connectionFailed: '연결 실패',
     settingsSaved: '설정이 저장되었습니다!',
     fillAllFields: '모든 필드를 입력하세요',
-    configureFirst: '먼저 Notion API 설정을 구성하세요'
+    configureFirst: '먼저 Notion API 설정을 구성하세요',
+    privacyTitle: '개인정보 보호',
+    privacyMessage: 'API 토큰은 기기에만 로컬로 저장됩니다. 당사는 귀하의 자격 증명을 수집, 전송 또는 액세스하지 않습니다.'
   },
   es: {
     appName: 'DevClip',
@@ -196,7 +206,9 @@ const translations = {
     connectionFailed: 'Conexión fallida',
     settingsSaved: '¡Configuración guardada exitosamente!',
     fillAllFields: 'Por favor completa todos los campos',
-    configureFirst: 'Por favor configura primero tu API de Notion'
+    configureFirst: 'Por favor configura primero tu API de Notion',
+    privacyTitle: 'Tu privacidad está protegida',
+    privacyMessage: 'Tu token API se almacena localmente solo en tu dispositivo. Nunca recopilamos, transmitimos ni accedemos a tus credenciales.'
   },
   pt: {
     appName: 'DevClip',
@@ -227,7 +239,9 @@ const translations = {
     connectionFailed: 'Conexão falhou',
     settingsSaved: 'Configurações salvas com sucesso!',
     fillAllFields: 'Por favor preencha todos os campos',
-    configureFirst: 'Por favor configure primeiro suas configurações da API do Notion'
+    configureFirst: 'Por favor configure primeiro suas configurações da API do Notion',
+    privacyTitle: 'Sua privacidade está protegida',
+    privacyMessage: 'Seu token API é armazenado localmente apenas no seu dispositivo. Nunca coletamos, transmitimos ou acessamos suas credenciais.'
   },
   hi: {
     appName: 'DevClip',
@@ -258,7 +272,9 @@ const translations = {
     connectionFailed: 'कनेक्शन विफल',
     settingsSaved: 'सेटिंग्स सफलतापूर्वक सहेजी गईं!',
     fillAllFields: 'कृपया सभी फ़ील्ड भरें',
-    configureFirst: 'कृपया पहले अपनी Notion API सेटिंग्स कॉन्फ़िगर करें'
+    configureFirst: 'कृपया पहले अपनी Notion API सेटिंग्स कॉन्फ़िगर करें',
+    privacyTitle: 'आपकी गोपनीयता सुरक्षित है',
+    privacyMessage: 'आपका API टोकन केवल आपके डिवाइस पर स्थानीय रूप से संग्रहीत है। हम कभी भी आपकी साख एकत्र, प्रसारित या एक्सेस नहीं करते हैं।'
   },
   ar: {
     appName: 'DevClip',
@@ -289,7 +305,9 @@ const translations = {
     connectionFailed: 'فشل الاتصال',
     settingsSaved: 'تم حفظ الإعدادات بنجاح!',
     fillAllFields: 'يرجى ملء جميع الحقول',
-    configureFirst: 'يرجى تكوين إعدادات Notion API أولاً'
+    configureFirst: 'يرجى تكوين إعدادات Notion API أولاً',
+    privacyTitle: 'خصوصيتك محمية',
+    privacyMessage: 'يتم تخزين رمز API الخاص بك محليًا على جهازك فقط. نحن لا نجمع أو ننقل أو نصل إلى بيانات اعتمادك أبدًا.'
   }
 };
 
@@ -444,6 +462,19 @@ function bindEvents() {
   // Settings
   document.getElementById('saveSettingsBtn').addEventListener('click', saveSettings);
   document.getElementById('testConnectionBtn').addEventListener('click', testConnection);
+  
+  // Toggle password visibility
+  document.getElementById('toggleToken').addEventListener('click', () => {
+    const input = document.getElementById('apiToken');
+    const btn = document.getElementById('toggleToken');
+    if (input.type === 'password') {
+      input.type = 'text';
+      btn.textContent = '🙈';
+    } else {
+      input.type = 'password';
+      btn.textContent = '👁️';
+    }
+  });
 }
 
 // Show settings view

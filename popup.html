@@ -66,9 +66,20 @@
       </div>
 
       <div class="settings-content">
+        <div class="privacy-notice">
+          <div class="privacy-icon">🔒</div>
+          <div class="privacy-text">
+            <strong data-i18n="privacyTitle">Your Privacy is Protected</strong>
+            <p data-i18n="privacyMessage">Your API token is stored locally on your device only. We never collect, transmit, or access your credentials.</p>
+          </div>
+        </div>
+
         <div class="form-group">
           <label for="apiToken" data-i18n="apiTokenLabel">Notion API Token</label>
-          <input type="password" id="apiToken" class="input" placeholder="secret_...">
+          <div class="password-field">
+            <input type="password" id="apiToken" class="input" placeholder="secret_...">
+            <button type="button" id="toggleToken" class="toggle-password" title="Show/Hide">👁️</button>
+          </div>
           <small class="help-text">
             <span data-i18n="getTokenFrom">Get your token from</span>
             <a href="https://www.notion.so/my-integrations" target="_blank">Notion Integrations</a>
