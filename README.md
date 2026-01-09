@@ -1,5 +1,7 @@
 # DevClip for Notion
 
+English | [简体中文](README_CN.md)
+
 A developer-focused Chrome extension for saving web pages, articles, and code snippets to Notion with one click.
 
 ## ✨ Features
